@@ -1,3 +1,11 @@
-## RadicalX Bootcamp - Recipe API 
+## RadicalX Bootcamp - Recipe API
 
-### Tech Stack: HTML, CSS, Javascript
+<br>
+
+## ⚙️ Tech Stack: HTML, CSS, Javascript
+
+<br>
+
+### Session 01:
+
+![](assets/Session-01.png)

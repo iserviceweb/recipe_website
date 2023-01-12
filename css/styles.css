@@ -1,6 +1,97 @@
+/* Google Font Imports */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+/* Purple: 574FFF*/
+
 /* Universal CSS Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-image: url("../assets/brooke-lark-jUPOXXRNdcA-unsplash.jpg");
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+header h1 {
+  color: white;
+  text-shadow: 2px 2px #574fff;
+}
+
+input {
+  margin-top: 1em;
+  font-family: inherit;
+  border: none;
+  outline: 0;
+  padding: 1em;
+  padding-right: 4em;
+  border-radius: 2em;
+}
+
+input:focus {
+  border: 2px solid #574fff;
+  transition: 0.3s;
+}
+
+.search__btn {
+  font-family: inherit;
+  font-weight: bold;
+  border: none;
+  outline: 0;
+  padding: 1em 2em;
+  background-color: #574fff;
+  color: white;
+  border-radius: 2em;
+}
+
+.search__btn:hover {
+  cursor: pointer;
+  background-color: black;
+  transition: 0.3s;
+}
+
+.recipe__card {
+  display: flex;
+  border: 1px solid #574fff;
+  border-radius: 2em;
+  margin: 0.5em;
+}
+
+.recipe__card img {
+  width: 10em;
+  height: 10em;
+  padding: 1em;
+  border-radius: 50%;
+}
+
+.text__container {
+  padding: 0 1em;
+}
+
+footer {
+  text-align: center;
+  background-color: #574fff;
+  color: white;
+  padding: 1em;
+}
+
+@media screen and (min-width: 800px) {
+  #recipe__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
