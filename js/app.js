@@ -1,7 +1,7 @@
 // www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata
 
 // Variables
-const randomRecipeURL = `https://www.themealdb.com/api/json/v1/1/search.php?f=b`;
+const randomRecipeURL = `https://www.themealdb.com/api/json/v1/1/search.php?f=e`;
 const recipeContainer = document.getElementById("recipe__container");
 let recipeDb = [];
 const RECIPE_NAME = "name";
@@ -21,6 +21,7 @@ const getAPIData = async (apiURL) => {
     fetchRecipeFromAPI(jsonData);
   } catch (error) {
     console.log(error);
+    recipeContainer.innerHTML = `<p clas>${error}</p>`
   }
 };
 
@@ -60,12 +61,30 @@ const displayAllRecipes = (recipeArray) => {
   }
 };
 
+const fetchRecipesByKeyword = (searchKeyword) => {
+  recipeDb = [];
+  getAPIData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchKeyword}`);
+};
+
 // Event Handlers
 const pageLoaded = () => {
   console.log("Page Loaded!");
   getAPIData(randomRecipeURL); //call API here
 };
 
+const searchButtonClicked = () => {
+  console.log("Search button clicked!");
+  let searchValue = document.querySelector("input").value;
+  // console.log(`You searched for : ${searchValue}`);
+  if (searchValue === "") {
+    return;
+  } else {
+    fetchRecipesByKeyword(searchValue);
+  }
+};
+
 // Event Listeners
 document.addEventListener("DOMContentLoaded", pageLoaded);
-// document.querySelector()
+document
+  .querySelector(".search__btn")
+  .addEventListener("click", searchButtonClicked);
